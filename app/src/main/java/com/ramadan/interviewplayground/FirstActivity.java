@@ -18,6 +18,8 @@ public class FirstActivity extends AppCompatActivity {
         setContentView(R.layout.activity_first);
         Log.e(TAG,"onCreate");
 
+        finish();
+
         Button nextBtn = findViewById(R.id.next_btn);
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
