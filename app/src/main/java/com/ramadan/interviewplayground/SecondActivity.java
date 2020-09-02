@@ -1,6 +1,8 @@
 package com.ramadan.interviewplayground;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +15,10 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
         Log.e(TAG,"onCreate");
+
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.add(R.id.container , new SecondFragment()).commit();
     }
 
     @Override
@@ -51,4 +57,5 @@ public class SecondActivity extends AppCompatActivity {
         super.onRestart();
         Log.e(TAG,"onRestart");
     }
+
 }
